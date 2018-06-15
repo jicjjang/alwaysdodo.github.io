@@ -13,11 +13,13 @@
     <div class="section section-intro">
       <div class="container">
         <div class="title en">Until next DODO</div>
-        <div class="d-day-container en">
-          <div class="d-day" v-if="!hasNext">없음.</div>
-          <div class="d-day" v-else-if="dday !== null">D-{{ dday }}</div>
+        <div class="counter counter-dday en" v-if="hasNext">
+          <div class="d-day" v-if="dday !== null">D-{{ dday }}</div>
           <div class="d-day" v-else-if="dday === 0">D-{{ dday }}</div>
           <div class="d-day" v-else>지.남</div>
+        </div>
+        <div class="counter counter-null en" v-else>
+          Coming Soon
         </div>
         <div class="description en">DO <span class="span">What you want to</span> DO</div>
         <div class="buttons">

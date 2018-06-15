@@ -12,7 +12,7 @@
             <div class="name">{{ user.name }}</div>
             <ul class="works">
               <li class="work" v-for="work in user.works" :key="work">
-                <nuxt-link v-if="user.body" :to="'/' + meet.date + '/' + user.id">{{ work }}</nuxt-link>
+                <a v-if="user.body" :href="'https://github.com/we-are-dodo/works/blob/master/' + meet.date + '/' + user.id + '.md'" target="_blank">{{ work }}</a>
                 <template v-else>{{ work }}</template>
               </li>
             </ul>

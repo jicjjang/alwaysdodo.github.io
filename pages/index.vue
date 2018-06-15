@@ -54,7 +54,7 @@ export default {
   data() {
     return {
       meets,
-      dday: NEXT_DODO_DATE.diff(new Date(), "days"),
+      dday: NEXT_DODO_DATE ? NEXT_DODO_DATE.diff(new Date(), "days") : null,
     }
   },
   mounted() {
@@ -67,7 +67,9 @@ export default {
   },
   methods: {
     calculateDday() {
-      this.dday = NEXT_DODO_DATE.diff(new Date(), "days")
+      if (NEXT_DODO_DATE) {
+        this.dday = NEXT_DODO_DATE.diff(new Date(), "days")
+      }
     },
   }
 }

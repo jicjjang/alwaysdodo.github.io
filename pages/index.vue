@@ -55,7 +55,10 @@ export default {
   },
   data() {
     return {
-      meets,
+      meets: meets.sort((a, b) => {
+        if (a.date === b.date) return 0
+        return a.date < b.date ? 1 : -1
+      }),
       dday: NEXT_DODO_DATE ? NEXT_DODO_DATE.diff(new Date(), "days") : null,
     }
   },

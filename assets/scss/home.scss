@@ -1,9 +1,27 @@
 
 @import "normalize.css/normalize.css";
 
+@mixin media-sm() {
+  @media screen and (max-width: 699px) {
+    @content;
+  }
+}
+@mixin media-md() {
+  @media screen and (min-width: 700px) and (max-width: 1199px) {
+    @content;
+  }
+}
+@mixin media-lg() {
+  @media screen and (min-width: 1200px) {
+    @content;
+  }
+}
+
 body {
   font-family: "Spoqa Han Sans", sans-serif;
   font-weight: 400;
+  font-size: 16px;
+  line-height: 1.6;
 }
 
 .en {
@@ -11,114 +29,129 @@ body {
 }
 
 .container {
-  margin: 0 auto;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  @include media-sm() {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+  @include media-md() {
+    width: 780px;
+  }
+  @include media-lg() {
+    width: 780px;
+  }
+}
 
-  .header {
-    background: #7151f4;
-    text-align: center;
-    padding-top: 16px;
-    padding-bottom: 67px;
+.button {
+  display: inline-block;
+  font-size: 14px;
+  border-radius: 6px;
+  padding: 8px 17px 5px;
+  display: inline-block;
+  color: white;
+  background-color: #5c3cdf;
+  text-decoration: none;
+  cursor: pointer;
+}
 
-    .logo {
-      width: 21%;
-      height: 30px;
-      margin: 0 auto;
-      background-repeat: no-repeat;
-      background-position: center center;
-      background-image: url("/dodo-logo.svg")
+.button + .button {
+  margin-left: 7px;
+}
+
+.section-header {
+  background: #7151f4;
+
+  .container {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    text-align: right;
+  }
+
+  .logo {
+    position: absolute;
+    top: 21px;
+    left: 0;
+    width: 89px;
+    height: 22px;
+    background-image: url("/dodo-logo.svg");
+    background-repeat: no-repeat;
+    background-size: 89px 22px;
+  }
+}
+
+
+.section-intro {
+  background: #7151f4;
+  .container {
+    padding-top: 55px;
+    padding-bottom: 87px;
+    @include media-sm() {
+      padding-bottom: 107px;
     }
-
-    .label-top {
-      width: 196px;
-      height: 24px;
-      font-size: 24px;
+  }
+  .title {
+    font-size: 24px;
+    text-align: center;
+    color: #ffffff;
+    margin-bottom: 20px;
+  }
+  .d-day-container {
+    width: 300px;
+    height: 127px;
+    border-radius: 63.5px;
+    background-color: #ffffff;
+    box-shadow: 0 7px 9px 0 #5938de;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 45px;
+    .d-day {
+      width: 198px;
+      height: 84px;
+      font-size: 84px;
       font-weight: bold;
       font-style: normal;
       font-stretch: normal;
+      padding-top: 26.9px;
       line-height: 1;
+      margin: 0 auto;
       letter-spacing: normal;
       text-align: center;
-      color: #ffffff;
-      margin: 87px auto 12px auto;
-    }
-
-    .d-day-container {
-      width: 300px;
-      height: 127px;
-      border-radius: 63.5px;
-      background-color: #ffffff;
-      box-shadow: 0 7px 9px 0 #5938de;
-      margin: 22px auto;
-
-      .d-day {
-        width: 198px;
-        height: 84px;
-        font-size: 84px;
-        font-weight: bold;
-        font-style: normal;
-        font-stretch: normal;
-        padding-top: 26.9px;
-        line-height: 1;
-        margin: 0 auto;
-        letter-spacing: normal;
-        text-align: center;
-        color: #7151f4;
-      }
-    }
-
-    .title {
-      width: 310px;
-      height: 30px;
-      font-size: 24px;
-      font-weight: bold;
-      font-style: normal;
-      font-stretch: normal;
-      line-height: 1.25;
-      letter-spacing: 0.5px;
-      margin: 67px auto 12px auto;
-      text-align: center;
-      color: #a4d6ef;
-
-      .span {
-        color: white; 
-      }
-    }
-
-    .media-container {
-      .box {
-        width: 110px;
-        height: 37px;
-        border-radius: 6px;
-        display: inline-block;
-        margin: 0 4.5px 0 4.5px;
-        color: white; 
-        background-color: rgba(255, 255, 255, 0.2);
-        background-position-x: 16px;
-        background-position-y: center;
-        background-repeat: no-repeat;
-        cursor: pointer;
-      }
-
-      .text {
-        text-align: left;
-        margin: 11.5px 0 0 40px;
-      }
-
-      .slack {
-        background-image: url("/ic-slack.svg")
-      }
-
-      .facebook {
-        background-image: url("/ic-facebook.svg")
-      }
-
-      .github {
-        background-image: url("/ic-github.svg")
-      }
+      color: #7151f4;
     }
   }
 
-  // 
+  .description {
+    font-size: 24px;
+    letter-spacing: 0.5px;
+    text-align: center;
+    color: #a4d6ef;
+    margin-bottom: 14px;
+    .span {
+      color: white; 
+    }
+  }
+
+  .buttons {
+    text-align: center;
+  }
+  .button {
+    background-repeat: no-repeat;
+    background-position: 10px center;
+    padding-left: 32px;
+  }
+  .button-slack {
+    background-image: url("/ic-slack.svg")
+  }
+  .button-gallery {
+    background-image: url("/ic-gallery.svg")
+  }
+  .button-github {
+    background-image: url("/ic-github.svg")
+  }
+}
+.container {
 
   .history {
     margin: 0 0 100px 0;

@@ -14,14 +14,15 @@
       <div class="container">
         <div class="title en">Until next DODO</div>
         <div class="d-day-container en">
-          <div class="d-day" v-if="dday !== null">D-{{ dday }}</div>
+          <div class="d-day" v-if="!hasNext">없음.</div>
+          <div class="d-day" v-else-if="dday !== null">D-{{ dday }}</div>
           <div class="d-day" v-else-if="dday === 0">D-{{ dday }}</div>
           <div class="d-day" v-else>지.남</div>
         </div>
         <div class="description en">DO <span class="span">What you want to</span> DO</div>
         <div class="buttons">
           <a class="button button-slack en" href="https://www.slack.com" target="blank">Slack</a>
-          <a class="button button-gallery en" href="??" target="blank">Gallery</a>
+          <a class="button button-gallery en" href="https://photos.app.goo.gl/HfCLGo3SB2F572yj6" target="blank">Gallery</a>
           <a class="button button-github en" href="https://github.com/we-are-dodo" target="blank">Github</a>
         </div>
       </div>
@@ -44,7 +45,7 @@ import MeetItem from "~/components/meet-item.vue"
 
 const meets = require("~/assets/json/meets.json").meets
 
-const NEXT_DODO_DATE = moment.tz("2018-06-18 19:30:00", "Asia/Seoul")
+const NEXT_DODO_DATE = null // moment.tz("2018-06-18 19:30:00", "Asia/Seoul")
 
 export default {
   components: {
@@ -53,16 +54,21 @@ export default {
   data() {
     return {
       meets,
-      dday: null,
+      dday: NEXT_DODO_DATE.diff(new Date(), "days"),
     }
   },
   mounted() {
     this.calculateDday()
   },
+  computed: {
+    hasNext() {
+      return NEXT_DODO_DATE !== null
+    },
+  },
   methods: {
     calculateDday() {
       this.dday = NEXT_DODO_DATE.diff(new Date(), "days")
-    }
+    },
   }
 }
 </script>

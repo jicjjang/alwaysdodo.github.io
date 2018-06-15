@@ -28,6 +28,19 @@ body {
   font-family: "Campton Bold DEMO", "Spoqa Han Sans", sans-serif;
 }
 
+.toggle-enter-active, .toggle-leave-active {
+  transition: opacity .3s ease, max-height .3s ease;
+  overflow: hidden;
+ }
+.toggle-enter, .fade-leave-to {
+  opacity: 0;
+  max-height: 0;
+}
+.toggle-enter-to, .fade-leave {
+  opacity: 1;
+  max-height: 500px;
+}
+
 .container {
   position: relative;
   margin-left: auto;
@@ -186,14 +199,38 @@ body {
       }
       .icon {
         position: absolute;
-        top: 14px;
-        right: 25px;
+        top: 20px;
+        right: 35px;
+        &:before,
+        &:after {
+          position: absolute;
+          top: 0;
+          left: 0;
+          content: "";
+          display: block;
+          width: 17px;
+          height: 3px;
+          background: #7151f4;
+          border-radius: 2px;
+          transition: transform .3s ease;
+        }
+        &:after {
+          transform: rotateZ(270deg);
+        }
       }
     }
     .body {
       padding: 20px 25px;
     }
-  }
+    &.toggle {
+      .header .icon:before {
+        transform: rotateZ(-180deg);
+      }
+      .header .icon:after {
+        transform: rotateZ(0);
+      }
+    }
+}
 
   .meet + .meet {
     margin-top: 7px;

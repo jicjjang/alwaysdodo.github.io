@@ -1,10 +1,8 @@
 <template>
   <section class="container">
 
-    <!-- 제일위 로고 -->
-
     <template>
-      <div class="header">
+      <div class="header en">
         
         <div class="logo"></div>
 
@@ -14,53 +12,73 @@
 
         <div class="d-day-container">
           <div class="d-day" v-if="dday !== null">D-{{ dday }}</div>
+          <div class="d-day" v-else-if="dday === 0">D-{{ dday }}</div>
+          <div class="d-day" v-else>지.남</div>
         </div>
 
         <div class="title">
           DO <span class="span">What you want to</span> DO
         </div>
 
+        <!-- 미디어 링크들 -->
         <div class="media-container">
-          <div class="box slack">
-            Slack
-          </div>
+          <a href="https://www.slack.com" target="blank">
+            <div class="box slack">
+              <div class="text">Slack</div>
+            </div>
+          </a>
 
-          <div class="box facebook">
-          </div>
+          <a href="https://www.slack.com" target="blank">
+            <div class="box facebook">
+              <div class="text">Group</div>
+            </div>
+          </a>
 
-          <div class="box github">
-          </div>
+          <a href="https://github.com/we-are-dodo" target="blank">
+            <div class="box github">
+              <div class="text">Github</div>
+            </div>
+          </a>
         </div>
+        <!--  -->
 
       </div>
     </template>
 
     <!--  -->
 
-    <div class="">
+    <div class="history en">
+        
+        <div class="subject" v-for="meet in meets" :key="meet.date">
+
+          <div class="event-title">
+            {{ meet.date }}
+          </div>
+
+          <div class="user-work-list">
+
+            <div class="content">
+              <div v-html="meet.contents"></div>
+            </div>
+
+            <div v-for="user in meet.users" :key="user.id">
+              <div class="user-name">
+                {{ user.name }}
+              </div>
+              
+              <div v-for="work in user.works" :key="work">
+                <div class="user-work">
+                  {{ work }}
+                </div>
+              </div>
+            </div>
+
+          </div>
+          
+        </div>
 
     </div>
 
-
-    <template v-if="dday > 0">
-      <div>D-{{ dday }}</div>
-    </template>
-
-    <template v-else-if="dday === 0">
-      <div>D-Day!!!!!</div>
-    </template>
-
-    <template v-else>
-      <div>지남.</div>
-    </template>
-
-
-    <div v-for="meet in meets" :key="meet.date">
-      <div v-html="meet.contents"></div>
-      <div v-for="user in meet.users" :key="user.id">
-        {{ user }}
-      </div>
-    </div>
   </section>
 </template>
 

@@ -2,26 +2,27 @@
 @import "normalize.css/normalize.css";
 
 body {
-  background: #7151f4;
   font-family: "Spoqa Han Sans", sans-serif;
   font-weight: 400;
 }
 
 .en {
-  font-family: "Campton Bold DEMO", sans-serif;
+  font-family: "Campton Bold DEMO", "Spoqa Han Sans", sans-serif;
 }
 
 .container {
-  max-width: 1024px;
   margin: 0 auto;
 
   .header {
+    background: #7151f4;
     text-align: center;
+    padding-top: 16px;
+    padding-bottom: 67px;
 
     .logo {
       width: 21%;
       height: 30px;
-      margin: 12px auto;
+      margin: 0 auto;
       background-repeat: no-repeat;
       background-position: center center;
       background-image: url("/dodo-logo.svg")
@@ -56,7 +57,7 @@ body {
         font-weight: bold;
         font-style: normal;
         font-stretch: normal;
-        padding-top: 26px;
+        padding-top: 26.9px;
         line-height: 1;
         margin: 0 auto;
         letter-spacing: normal;
@@ -85,21 +86,89 @@ body {
 
     .media-container {
       .box {
-        width: 105px;
+        width: 110px;
         height: 37px;
         border-radius: 6px;
-        background-color: rgba(255, 255, 255, 0.2);
         display: inline-block;
-        margin: 0 4px 0 4px; 
+        margin: 0 4.5px 0 4.5px;
+        color: white; 
+        background-color: rgba(255, 255, 255, 0.2);
+        background-position-x: 16px;
+        background-position-y: center;
+        background-repeat: no-repeat;
+        cursor: pointer;
+      }
+
+      .text {
+        text-align: left;
+        margin: 11.5px 0 0 40px;
       }
 
       .slack {
-        background-position-x: 20px;
-        background-position-y: center;
-        background-repeat: no-repeat;
         background-image: url("/ic-slack.svg")
       }
+
+      .facebook {
+        background-image: url("/ic-facebook.svg")
+      }
+
+      .github {
+        background-image: url("/ic-github.svg")
+      }
     }
+  }
+
+  // 
+
+  .history {
+    background-color: white;
+    display: block;
+    margin: 0 0 100px 0;
+    padding: 0 0 100px 0;
+
+    // ------ ------
+
+    .subject {
+      width: 780px;
+      height: 47px;
+      border-radius: 5px;
+      margin: 37px auto 0 auto;
+      background-color: #b5e6ff;
+
+      .event-title {
+        width: 120px;
+        height: 21px;
+        font-size: 18px;
+        line-height: 1.1666666666666667;
+        letter-spacing: normal;
+        color: #7151f4;
+        margin: 0 0 0 30px;
+        padding-top: 15.6px;
+      }
+    }
+    
+    // ------ ------
+    
+    .content {
+    }
+
+    .user-work-list {
+      padding-left: 20px;
+      
+      .user-name {
+        font-size: 14px;
+        color: #4a4a4a;
+        margin: 22px 0 0 0;
+        font-weight: bold;
+      }
+  
+      .user-work {
+        font-size: 14px;
+        color: #7151f4;        
+        margin: 4px 0 0 0;
+      }
+    }
+
   }
 
   .name {

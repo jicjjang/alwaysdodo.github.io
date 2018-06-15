@@ -31,5 +31,11 @@ module.exports = {
         })
       }
     }
-  }
+  },
+  generate: {
+    minify: {
+      collapseWhitespace: true,
+      removeRedundantAttributes: false,
+    }
+  },
 }

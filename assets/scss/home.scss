@@ -45,8 +45,11 @@ body {
 }
 
 .button {
+  vertical-align: top;
+  box-sizing: border-box;
   display: inline-block;
   font-size: 14px;
+  height: 35px;
   border-radius: 6px;
   padding: 8px 17px 5px;
   display: inline-block;
@@ -58,6 +61,14 @@ body {
 
 .button + .button {
   margin-left: 7px;
+}
+
+.button-icon {
+  background-repeat: no-repeat;
+  background-size: 20px 20px;
+  background-position: 9px 8px;
+  background-image: url("/ic-mail.svg");
+  padding-left: 20px;
 }
 
 .section-header {
@@ -151,61 +162,110 @@ body {
     background-image: url("/ic-github.svg")
   }
 }
-.container {
 
-  .history {
-    margin: 0 0 100px 0;
-    padding: 0 0 100px 0;
 
-    // ------ ------
 
-    .subject {
-      width: 780px;
-      height: 47px;
-      border-radius: 5px;
-      margin: 37px auto 0 auto;
-      background-color: #b5e6ff;
-
-      .event-title {
-        width: 120px;
-        height: 21px;
-        font-size: 18px;
-        line-height: 1.1666666666666667;
-        letter-spacing: normal;
-        color: #7151f4;
-        margin: 0 0 0 30px;
-        padding-top: 15.6px;
-      }
-    }
-    
-    // ------ ------
-    
-    .content {
-    }
-
-    .user-work-list {
-      padding-left: 20px;
-      
-      .user-name {
-        font-size: 14px;
-        color: #4a4a4a;
-        margin: 22px 0 0 0;
-        font-weight: bold;
-      }
+.section-body {
   
-      .user-work {
-        font-size: 14px;
-        color: #7151f4;        
-        margin: 4px 0 0 0;
+  .container {
+    padding-top: 30px;
+    padding-bottom: 105px;
+  }
+  .meets {
+  }
+  .meet {
+    .header {
+      position: relative;
+      border-radius: 5px;
+      background-color: #b5e6ff;
+      padding: 10px 25px 8px;
+      cursor: pointer;
+      .title {
+        font-size: 18px;
+        color: #7151f4;
+      }
+      .icon {
+        position: absolute;
+        top: 14px;
+        right: 25px;
       }
     }
-
+    .body {
+      padding: 20px 25px;
+    }
   }
 
-  .name {
-    color:blue;
+  .meet + .meet {
+    margin-top: 7px;
   }
-  .age {
-    color: red; 
+
+  .intro {
+    font-size: 14px;
+    line-height: 1.5;
+    letter-spacing: -0.4px;
+    padding-bottom: 12px;
+    color: #74c4eb;
+    h1, h2, h3, h4, h5, h6 {
+      margin: 0;
+      margin-bottom: .3em;
+    }
+    h1 {
+      font-size: 1.5em;
+    }
+    h2 {
+      font-size: 1.4em;
+    }
+    h3 {
+      font-size: 1.3em;
+    }
+    h4 {
+      font-size: 1.2em;
+    }
+    h5 {
+      font-size: 1.1em;
+    }
+    h6 {
+      font-size: 1em;
+    }
+    p {
+      margin: 0;
+      margin-bottom: .5em;
+    }
+    svg {
+      display: none;
+    }
+  }
+
+  .users {
+    border-top: solid 1px #74c4eb;
+    padding-top: 13px;
+  }
+  .user {
+    line-height: 1.2;
+
+    & + .user {
+      margin-top: 18px;
+    }
+    .name {
+      font-size: 14px;
+      color: #4a4a4a;
+      font-weight: bold;
+    }
+
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .work {
+      font-size: 14px;
+      color: #4a4a4a;
+      margin: 4px 0 0 0;
+      a {
+        color: #7151f4;
+        text-decoration: underline;
+      }
+    }
   }
 }

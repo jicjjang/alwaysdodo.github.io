@@ -5,8 +5,8 @@
       <div class="container">
         <div class="logo"></div>
 
-        <a class="button button-text">참가신청</a>
-        <a class="button button-icon">??</a>
+        <!-- <a class="button button-text">참가신청</a> -->
+        <a class="button button-icon" href="mailto:we.are.dodo.2018@gmail.com"></a>
       </div>
     </div>
 
@@ -27,43 +27,20 @@
       </div>
     </div>
 
-    <div class="history en">
-        
-      <div class="subject" v-for="meet in meets" :key="meet.date">
-
-        <div class="event-title">
-          {{ meet.date }}
-        </div>
-
-        <div class="user-work-list">
-
-          <div class="content">
-            <div v-html="meet.contents"></div>
-          </div>
-
-          <div v-for="user in meet.users" :key="user.id">
-            <div class="user-name">
-              {{ user.name }}
-            </div>
-            
-            <div v-for="work in user.works" :key="work">
-              <div class="user-work">
-                {{ work }}
-              </div>
-            </div>
-          </div>
-
+    <div class="section-body">
+      <div class="container">
+        <div class="meets">
+          <MeetItem v-for="(meet, index) in meets" :key="meet.date" :meet="meet" :opened="index === 0" />
         </div>
       </div>
     </div>
   </div>
 </template>
-
-
 <script>
 
 import * as moment from "moment"
 import "moment-timezone"
+import MeetItem from "~/components/meet-item.vue"
 
 const meets = require("~/assets/json/meets.json").meets
 
@@ -71,6 +48,7 @@ const NEXT_DODO_DATE = moment.tz("2018-06-18 19:30:00", "Asia/Seoul")
 
 export default {
   components: {
+    MeetItem,
   },
   data() {
     return {

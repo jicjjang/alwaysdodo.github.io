@@ -1,11 +1,55 @@
 <template>
   <section class="container">
+
+    <!-- 제일위 로고 -->
+
+    <template>
+      <div class="header">
+        
+        <div class="logo"></div>
+
+        <div class="label-top">
+          Until next DODO
+        </div>
+
+        <div class="d-day-container">
+          <div class="d-day">D-{{ dday }}</div>
+        </div>
+
+        <div class="title">
+          DO <span class="span">What you want to</span> DO
+        </div>
+
+        <div class="media-container">
+          <div class="box slack">
+            Slack
+          </div>
+
+          <div class="box facebook">
+          </div>
+
+          <div class="box github">
+          </div>
+        </div>
+
+      </div>
+    </template>
+
+    <!--  -->
+
+    <div class="">
+
+    </div>
+
+
     <template v-if="dday > 0">
       <div>D-{{ dday }}</div>
     </template>
+
     <template v-else-if="dday === 0">
       <div>D-Day!!!!!</div>
     </template>
+
     <template v-else>
       <div>지남.</div>
     </template>
@@ -19,6 +63,7 @@
     </div>
   </section>
 </template>
+
 <script>
 // import AppLogo from '~/components/AppLogo.vue'
 
@@ -68,7 +113,7 @@ export default {
   },
   data() {
     return {
-      dday: null,
+      dday: 0,
     }
   },
   mounted() {

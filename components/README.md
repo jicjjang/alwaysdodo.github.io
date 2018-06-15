@@ -1,6 +1,3 @@
-# COMPONENTS
+# 컴포넌트
 
-The components directory contains your Vue.js Components.
-Nuxt.js doesn't supercharge these components.
-
-**This directory is not required, you can delete it if you don't want to use it.**
+`.vue` 파일인 경우 여기 디렉토리에 추가하세요.

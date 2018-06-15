@@ -14,6 +14,10 @@ module.exports = {
     "~/assets/scss/home.scss",
   ],
   loading: { color: '#3B8070' },
+
+  modules: [
+    '@nuxtjs/axios',
+  ],
   build: {
     extend (config, { isDev, isClient }) {
       if (isDev && isClient) {

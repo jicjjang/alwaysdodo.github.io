@@ -1,6 +1,15 @@
 
-// 스타일 시트는 여기에 작성해주세요. :-)
+@import "normalize.css/normalize.css";
 
 body {
   background: #aaf;
+}
+
+.container {
+  .name {
+    color:blue;
+  }
+  .age {
+    color: red; 
+  }
 }

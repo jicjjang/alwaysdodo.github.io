@@ -1,16 +1,16 @@
-
 @import "normalize.css/normalize.css";
-
 @mixin media-sm() {
   @media screen and (max-width: 699px) {
     @content;
   }
 }
+
 @mixin media-md() {
   @media screen and (min-width: 700px) and (max-width: 1199px) {
     @content;
   }
 }
+
 @mixin media-lg() {
   @media screen and (min-width: 1200px) {
     @content;
@@ -28,15 +28,20 @@ body {
   font-family: "Campton Bold DEMO", "Spoqa Han Sans", sans-serif;
 }
 
-.toggle-enter-active, .toggle-leave-active {
+.toggle-enter-active,
+.toggle-leave-active {
   transition: opacity .3s ease, max-height .3s ease;
   overflow: hidden;
- }
-.toggle-enter, .fade-leave-to {
+}
+
+.toggle-enter,
+.fade-leave-to {
   opacity: 0;
   max-height: 0;
 }
-.toggle-enter-to, .fade-leave {
+
+.toggle-enter-to,
+.fade-leave {
   opacity: 1;
   max-height: 500px;
 }
@@ -72,7 +77,7 @@ body {
   cursor: pointer;
 }
 
-.button + .button {
+.button+.button {
   margin-left: 7px;
 }
 
@@ -86,13 +91,11 @@ body {
 
 .section-header {
   background: #7151f4;
-
   .container {
     padding-top: 15px;
     padding-bottom: 15px;
     text-align: right;
   }
-
   .logo {
     position: absolute;
     top: 21px;
@@ -104,7 +107,6 @@ body {
     background-size: 89px 22px;
   }
 }
-
 
 .section-intro {
   background: #7151f4;
@@ -151,7 +153,6 @@ body {
       color: #7151f4;
     }
   }
-
   .description {
     font-size: 24px;
     letter-spacing: 0.5px;
@@ -159,10 +160,9 @@ body {
     color: #a4d6ef;
     margin-bottom: 14px;
     .span {
-      color: white; 
+      color: white;
     }
   }
-
   .buttons {
     text-align: center;
   }
@@ -182,16 +182,12 @@ body {
   }
 }
 
-
-
 .section-body {
-  
   .container {
     padding-top: 30px;
     padding-bottom: 105px;
   }
-  .meets {
-  }
+  .meets {}
   .meet {
     .header {
       position: relative;
@@ -236,19 +232,22 @@ body {
         transform: rotateZ(0);
       }
     }
-}
-
-  .meet + .meet {
+  }
+  .meet+.meet {
     margin-top: 7px;
   }
-
   .intro {
     font-size: 14px;
     line-height: 1.5;
     letter-spacing: -0.4px;
     padding-bottom: 12px;
     color: #74c4eb;
-    h1, h2, h3, h4, h5, h6 {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
       margin: 0;
       margin-bottom: .3em;
     }
@@ -278,15 +277,13 @@ body {
       display: none;
     }
   }
-
   .users {
     border-top: solid 1px #74c4eb;
     padding-top: 13px;
   }
   .user {
     line-height: 1.2;
-
-    & + .user {
+    &+.user {
       margin-top: 18px;
     }
     .name {
@@ -294,13 +291,11 @@ body {
       color: #4a4a4a;
       font-weight: bold;
     }
-
     ul {
       margin: 0;
       padding: 0;
       list-style: none;
     }
-
     .work {
       font-size: 14px;
       color: #4a4a4a;

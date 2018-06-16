@@ -21,7 +21,8 @@
         <div class="counter counter-null en" v-else>
           Coming Soon
         </div>
-        <div class="description en">DO <span class="span">What you want to</span> DO</div>
+        <div class="description en">DO
+          <span class="span">What you want to</span> DO</div>
         <div class="buttons">
           <a class="button button-slack en" href="https://www.slack.com" target="blank">Slack</a>
           <a class="button button-gallery en" href="https://photos.app.goo.gl/HfCLGo3SB2F572yj6" target="blank">Gallery</a>
@@ -40,42 +41,38 @@
   </div>
 </template>
 <script>
+  import * as moment from "moment"
+  import "moment-timezone"
+  import MeetItem from "~/components/meet-item.vue"
 
-import * as moment from "moment"
-import "moment-timezone"
-import MeetItem from "~/components/meet-item.vue"
+  const meets = require("~/assets/json/meets.json").meets
 
-const meets = require("~/assets/json/meets.json").meets
+  const NEXT_DODO_DATE = null // moment.tz("2018-06-18 19:30:00", "Asia/Seoul")
 
-const NEXT_DODO_DATE = null // moment.tz("2018-06-18 19:30:00", "Asia/Seoul")
-
-export default {
-  components: {
-    MeetItem,
-  },
-  data() {
-    return {
-      meets: meets.sort((a, b) => {
-        if (a.date === b.date) return 0
-        return a.date < b.date ? 1 : -1
-      }),
-      dday: NEXT_DODO_DATE ? NEXT_DODO_DATE.diff(new Date(), "days") : null,
-    }
-  },
-  mounted() {
-    this.calculateDday()
-  },
-  computed: {
-    hasNext() {
-      return NEXT_DODO_DATE !== null
+  export default {
+    components: {
+      MeetItem,
     },
-  },
-  methods: {
-    calculateDday() {
-      if (NEXT_DODO_DATE) {
-        this.dday = NEXT_DODO_DATE.diff(new Date(), "days")
+    data() {
+      return {
+        meets,
+        dday: NEXT_DODO_DATE ? NEXT_DODO_DATE.diff(new Date(), "days") : null,
       }
     },
+    mounted() {
+      this.calculateDday()
+    },
+    computed: {
+      hasNext() {
+        return NEXT_DODO_DATE !== null
+      },
+    },
+    methods: {
+      calculateDday() {
+        if (NEXT_DODO_DATE) {
+          this.dday = NEXT_DODO_DATE.diff(new Date(), "days")
+        }
+      },
+    }
   }
-}
 </script>

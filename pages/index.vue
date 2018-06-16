@@ -21,8 +21,7 @@
         <div class="counter counter-null en" v-else>
           Coming Soon
         </div>
-        <div class="description en">DO
-          <span class="span">What you want to</span> DO</div>
+        <div class="description en">DO <span class="span">What you want to</span> DO</div>
         <div class="buttons">
           <a class="button button-slack en" href="https://www.slack.com" target="blank">Slack</a>
           <a class="button button-gallery en" href="https://photos.app.goo.gl/HfCLGo3SB2F572yj6" target="blank">Gallery</a>
@@ -55,17 +54,15 @@
     },
     data() {
       return {
-        meets,
+        meets: meets.sort((a, b) => {
+          if (a.date === b.date) return 0
+          return a.date < b.date ? 1 : -1
+        }),
         dday: NEXT_DODO_DATE ? NEXT_DODO_DATE.diff(new Date(), "days") : null,
       }
     },
     mounted() {
       this.calculateDday()
-    },
-    computed: {
-      hasNext() {
-        return NEXT_DODO_DATE !== null
-      },
     },
     methods: {
       calculateDday() {

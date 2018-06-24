@@ -46,7 +46,7 @@
 
   const meets = require("~/assets/json/meets.json").meets
 
-  const NEXT_DODO_DATE = null // moment.tz("2018-06-18 19:30:00", "Asia/Seoul")
+  const NEXT_DODO_DATE = moment.tz("2018-07-20 19:30:00", "Asia/Seoul")
 
   export default {
     components: {

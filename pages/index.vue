@@ -13,7 +13,7 @@
     <div class="section section-intro">
       <div class="container">
         <div class="title en">Until next DODO</div>
-        <div class="counter counter-dday en" v-if="hasNext">
+        <div class="counter counter-dday en" v-if="dday">
           <div class="d-day" v-if="dday !== null">D-{{ dday }}</div>
           <div class="d-day" v-else-if="dday === 0">D-{{ dday }}</div>
           <div class="d-day" v-else>지.남</div>

@@ -1,4 +1,4 @@
-# we-are-dodo
+# alwaysdodo.com
 
 > Nuxt.js project
 

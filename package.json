@@ -1,8 +1,4 @@
 {
-  "name": "we-are-dodo",
-  "version": "1.0.0",
-  "description": "Nuxt.js project",
-  "author": "moka-a <aud1220a@gmail.com>",
   "private": true,
   "scripts": {
     "dev": "nuxt",

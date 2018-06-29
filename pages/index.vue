@@ -23,9 +23,9 @@
         </div>
         <div class="description en">DO <span class="span">What you want to</span> DO</div>
         <div class="buttons">
-          <a class="button button-slack en" href="https://www.slack.com" target="blank">Slack</a>
+          <a class="button button-slack en" href="http://alwaysdodo.slack.com" target="blank">Slack</a>
           <a class="button button-gallery en" href="https://photos.app.goo.gl/HfCLGo3SB2F572yj6" target="blank">Gallery</a>
-          <a class="button button-github en" href="https://github.com/we-are-dodo" target="blank">Github</a>
+          <a class="button button-github en" href="https://github.com/alwaysdodo" target="blank">Github</a>
         </div>
       </div>
     </div>

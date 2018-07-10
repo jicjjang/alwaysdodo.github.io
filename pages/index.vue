@@ -14,8 +14,8 @@
       <div class="container">
         <div class="title en">Until next DODO</div>
         <div class="counter counter-dday en" v-if="dday">
-          <div class="d-day" v-if="dday !== null">D-{{ dday }}</div>
-          <div class="d-day" v-else-if="dday === 0">D-{{ dday }}</div>
+          <div class="d-day" v-if="dday !== null">D-{{ dday+1 }}</div>
+          <div class="d-day" v-else-if="dday === 0">D-Day</div>
           <div class="d-day" v-else>지.남</div>
         </div>
         <div class="counter counter-null en" v-else>

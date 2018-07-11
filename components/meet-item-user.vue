@@ -21,7 +21,7 @@ export default {
   },
   props: {
     user: Object,
-    meetDate: string,
+    meetDate: String,
   },
 }
 </script>

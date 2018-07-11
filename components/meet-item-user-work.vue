@@ -8,10 +8,10 @@
 <script>
 export default {
   props: {
-    work: string,
-    meetDate: string,
-    userId: string,
-    userBody: string,
+    work: String,
+    meetDate: String,
+    userId: String,
+    userBody: String,
   },
 }
 </script>
